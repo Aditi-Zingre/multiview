@@ -2,79 +2,22 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Multi-View AR with AR.js</title>
+    <title>AR with Custom Images</title>
+    <!-- Include A-Frame and AR.js libraries -->
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   </head>
   <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs="trackingMethod: best; debugUIEnabled: false;">
-      <!-- NFT Marker for Image 1 -->
-      <a-nft
-        type="nft"
-        url="markers/image1"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
-      >
-        <!-- 3D Object for Image 1 -->
-        <a-box position="0 0.5 0" material="color: red;"></a-box>
-      </a-nft>
+    <!-- A-Frame Scene with AR.js -->
+    <a-scene embedded arjs="sourceType: webcam;">
+      <!-- Marker-based AR -->
+      <a-marker preset="hiro">
+        <!-- Replace with your own image -->
+        <a-image src="https://your-image-url.com/image1.png" width="1" height="1" position="0 0.5 0"></a-image>
+      </a-marker>
 
       <!-- Camera -->
       <a-entity camera></a-entity>
     </a-scene>
   </body>
 </html>
-
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Multi-View AR with AR.js</title>
-    <!-- Include A-Frame and AR.js with NFT support -->
-    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-  </head>
-  <body style="margin: 0; overflow: hidden;">
-    <!-- A-Frame Scene with AR.js NFT -->
-    <a-scene embedded arjs="trackingMethod: best; debugUIEnabled: false;">
-      <!-- NFT Marker for Image 1 -->
-      <a-nft
-        type="nft"
-        url="markers/image1"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
-      >
-        <!-- 3D Object for Image 1 -->
-        <a-entity
-          gltf-model="url(https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf)"
-          scale="0.1 0.1 0.1"
-          position="0 0.5 0"
-        ></a-entity>
-      </a-nft>
-
-      <!-- NFT Marker for Image 2 -->
-      <a-nft
-        type="nft"
-        url="markers/image2"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
-      >
-        <!-- 3D Object for Image 2 -->
-        <a-entity
-          gltf-model="url(https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf)"
-          scale="0.1 0.1 0.1"
-          position="0 0.5 0"
-        ></a-entity>
-      </a-nft>
-
-      <!-- Camera -->
-      <a-entity camera></a-entity>
-    </a-scene>
-  </body>
-</html> -->
